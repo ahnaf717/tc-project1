@@ -1,0 +1,26 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1603513492128-ba7bc9b3e143?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmVpZ2V8ZW58MHx8MHx8&w=1000&q=80");
+    background-color: #cccccc;
+    margin:0 auto;
+   }
+   
+
+   
+.button{
+
+    padding: 20px 20px; 
+    background-color: #00CED1 ;
+    border: none; 
+    color: white;  
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-family:Cursive;
+    margin: 2px 6px; 
+    cursor: pointer; 
+    font-size:20px;
+    
+    
+    }
+
+   

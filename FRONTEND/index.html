@@ -1,0 +1,197 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    
+
+    <style>
+
+body {
+ background-image: url("https://images.unsplash.com/photo-1603513492128-ba7bc9b3e143?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmVpZ2V8ZW58MHx8MHx8&w=1000&q=80");
+ background-color: #cccccc;
+}
+
+
+.center { 
+ border: 5px solid #FFFF00;
+ text-align: center;
+ position: fixed;
+ top: 40%;
+ left: 39%;
+ margin-top: -50px;
+ margin-left: -50px;
+
+    
+}
+
+
+
+
+
+ 
+.button{
+
+padding: 20px 12px; 
+background-color: #00CED1 ;
+border: none; 
+color: white;  
+text-align: center; 
+text-decoration: none; 
+display: inline-block; 
+font-family:Cursive;
+margin: 2px 6px; 
+cursor: pointer; 
+font-size:20px;
+
+
+}
+
+
+        
+    </style>
+</head>
+<body>
+
+  
+
+
+<div class="center" >
+
+    
+      <img class="mt-4 mb-4" src ="https://i.graphicmama.com/blog/wp-content/uploads/2020/03/04133345/QA-Monogram.png" 
+      height="72"  alt="Company Logo">
+       <h1 class="h3 mb=3 font-weight-normal">please sign in</h1>
+       <input type="text" id="Username"
+        class="form-control" placeholder="Username" required autofocus>
+     
+       <input type="password" id="password"
+       class="form-control" placeholder="Password" required autofocus>
+
+       <div class="mt-3">
+           <button id="ebutton" onclick="login()" class="button" >Sign In</button>
+    
+       </div>
+      
+    
+     
+     <img class="mt-4 mb-4" src ="https://i.graphicmama.com/blog/wp-content/uploads/2020/03/04133345/QA-Monogram.png" 
+     height="72"  alt="Company Logo">
+      <h1 class="h3 mb=3 font-weight-normal">please sign in</h1>
+      <input type="text" id="musername"
+        placeholder="Manager Username" required autofocus>
+    
+      <input type="password" id="mpassword"
+       placeholder="Manager Password" required autofocus>
+
+      <div class="mt-3">
+        <button id="mbutton" onclick="mlogin()" class="button" >Sign In</button>
+   
+      </div>
+     
+    </form>
+
+
+   
+
+
+
+
+</div>
+
+
+
+
+</body>
+
+<script>
+console.log("Its connected")
+
+
+
+
+
+ async function login(){
+
+   
+   
+    let username = document.getElementById("Username").value;
+    let password = document.getElementById("password").value;
+
+    console.log(username,password)
+
+
+
+    let response = await fetch("http://127.0.0.1:5000/login",{
+        method : "POST",
+        headers:{"Content-Type":"application/json"},
+        body : JSON.stringify({"employeeID":null,"username":username,"password":password})
+
+          
+        })
+
+           
+        
+
+    let responsedata = await response.json();
+    console.log(responsedata)
+    sessionStorage.setItem("employeeID",responsedata.employeeID)
+    window.location.href = "Edashboard.html"
+
+
+
+  
+
+      
+
+
+}
+
+
+
+async function mlogin(){
+
+   
+   
+let username = document.getElementById("musername").value;
+let password = document.getElementById("mpassword").value;
+
+console.log(username,password)
+
+
+
+let response = await fetch("http://127.0.0.1:5000/manager",{
+    method : "POST",
+    headers:{"Content-Type":"application/json"},
+    body : JSON.stringify({"managerID":null,"userName":username,"passWord":password})
+
+       
+    })
+
+       
+    
+
+let responsedata = await response.json();
+console.log(responsedata)
+window.location.href = "Mdashboard.html"
+
+
+
+  
+
+
+}
+
+
+
+
+
+
+
+</script>
+</html>
