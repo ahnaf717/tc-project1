@@ -7,10 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="project2achievers" />
+        <module name="Project2Achievers-master" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="project2achievers" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>
