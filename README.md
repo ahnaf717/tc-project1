@@ -1,6 +1,6 @@
 # ERS-Employee Reimbursement System
-
-## The Employee Reimbursement System, allows employees to submit reimbursements for various purposes such as Travel, Gas and HealthCare. The submitted reimbursement must be approved by that employee's Manager. 
+## Project Description
+The Employee Reimbursement System, allows employees to submit reimbursements for various purposes such as Travel, Gas and HealthCare. The submitted reimbursement must be approved by that employee's Manager. 
 
 
 ## Technologies Used
